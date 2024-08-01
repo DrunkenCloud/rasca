@@ -1,12 +1,11 @@
-TARGET = main
+TARGET = ./main
+SRC = ./main.cpp
+OUT = ./image.ppm
 
-SRC = main.cpp
+all: $(TARGET) run
 
-OUT = image.ppm
-
-all: run
-
-$(TARGET):$(SRC)
+$(TARGET): $(SRC)
+	rm -f $(TARGET)
 	g++ $(SRC) -o $(TARGET)
 
 run: $(TARGET)
